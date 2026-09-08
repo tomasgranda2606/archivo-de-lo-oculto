@@ -125,3 +125,10 @@ formulario.addEventListener('submit', (evento) => {
     formulario.reset();
   }
 });
+
+const botonHamburguesa = document.querySelector('#menu-hamburguesa');
+const menuNav = document.querySelector('nav ul');
+
+botonHamburguesa.addEventListener('click', () => {
+  menuNav.classList.toggle('activo');
+});

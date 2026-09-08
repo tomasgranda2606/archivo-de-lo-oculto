@@ -151,3 +151,33 @@ nav a:hover {
   font-weight: bold;
   margin-top: 1rem;
 }
+
+#menu-hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-texto);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #menu-hamburguesa {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #1a1a1a;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  nav ul.activo {
+    display: flex;
+  }
+}
