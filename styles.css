@@ -72,3 +72,23 @@ nav a:hover {
 .tarjeta-leyenda h3 {
   margin: 0.5rem 0;
 }
+
+.filtros {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.filtros button {
+  background-color: #1a1a1a;
+  color: var(--color-texto);
+  border: 1px solid var(--color-acento);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filtros button:hover {
+  background-color: var(--color-acento);
+}

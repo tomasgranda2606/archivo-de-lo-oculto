@@ -42,7 +42,7 @@ catalogo.appendChild(grid);
 leyendas.forEach((leyenda) => {
   const tarjeta = document.createElement('div');
   tarjeta.classList.add('tarjeta-leyenda');
-
+  tarjeta.dataset.categoria = leyenda.categoria;
   tarjeta.innerHTML = `
     <img src="${leyenda.imagen}" alt="${leyenda.nombre}">
     <h3>${leyenda.nombre}</h3>
@@ -52,4 +52,22 @@ leyendas.forEach((leyenda) => {
   `;
 
   grid.appendChild(tarjeta);
+});
+
+const botonesFiltro = document.querySelectorAll('.filtros button');
+
+botonesFiltro.forEach((boton) => {
+  boton.addEventListener('click', () => {
+    const categoriaElegida = boton.dataset.categoria;
+
+    const todasLasTarjetas = document.querySelectorAll('.tarjeta-leyenda');
+
+    todasLasTarjetas.forEach((tarjeta) => {
+      if (categoriaElegida === 'todas' || tarjeta.dataset.categoria === categoriaElegida) {
+        tarjeta.style.display = 'block';
+      } else {
+        tarjeta.style.display = 'none';
+      }
+    });
+  });
 });
