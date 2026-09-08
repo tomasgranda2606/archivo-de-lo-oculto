@@ -71,3 +71,57 @@ botonesFiltro.forEach((boton) => {
     });
   });
 });
+const formulario = document.querySelector('#form-leyenda');
+
+formulario.addEventListener('submit', (evento) => {
+  evento.preventDefault();
+
+  let esValido = true;
+
+  // Limpiar errores previos
+  document.querySelectorAll('.error').forEach((span) => {
+    span.textContent = '';
+  });
+
+  // Validar nombre de usuario
+  const nombreUsuario = document.querySelector('#nombre-usuario');
+  if (nombreUsuario.value.trim().length < 3) {
+    document.querySelector('#error-nombre-usuario').textContent = 'El nombre debe tener al menos 3 caracteres.';
+    esValido = false;
+  }
+
+  // Validar email
+  const email = document.querySelector('#email');
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regexEmail.test(email.value.trim())) {
+    document.querySelector('#error-email').textContent = 'Ingresá un email válido.';
+    esValido = false;
+  }
+
+  // Validar nombre de la leyenda
+  const nombreLeyenda = document.querySelector('#nombre-leyenda');
+  if (nombreLeyenda.value.trim().length === 0) {
+    document.querySelector('#error-nombre-leyenda').textContent = 'Este campo es obligatorio.';
+    esValido = false;
+  }
+
+  // Validar región
+  const region = document.querySelector('#region');
+  if (region.value.trim().length === 0) {
+    document.querySelector('#error-region').textContent = 'Este campo es obligatorio.';
+    esValido = false;
+  }
+
+  // Validar descripción
+  const descripcion = document.querySelector('#descripcion');
+    if (descripcion.value.trim().length < 20) {
+    document.querySelector('#error-descripcion').textContent = 'Contanos un poco más (mínimo 20 caracteres).';
+    esValido = false;
+  }
+
+  // Si todo está bien
+  if (esValido) {
+    document.querySelector('#mensaje-exito').textContent = '¡Gracias por compartir tu leyenda!';
+    formulario.reset();
+  }
+});
