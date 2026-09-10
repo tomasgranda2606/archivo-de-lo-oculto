@@ -291,3 +291,14 @@ nav a:hover {
   color: var(--color-texto);
   font-family: var(--fuente-texto);
 }
+
+nav a,
+.boton-nav {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+}
