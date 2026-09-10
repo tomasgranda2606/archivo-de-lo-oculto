@@ -479,3 +479,18 @@ nav a,
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(139, 0, 0, 0.5);
 }
+
+body.tema-claro {
+  --color-fondo: #f5f0e8;
+  --color-texto: #1a1a1a;
+}
+
+body.tema-claro header,
+body.tema-claro .modal-contenido,
+body.tema-claro .tarjeta-leyenda,
+body.tema-claro .filtros button,
+body.tema-claro .campo input,
+body.tema-claro .campo textarea {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}

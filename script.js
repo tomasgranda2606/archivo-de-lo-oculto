@@ -227,3 +227,23 @@ botonAleatorio.addEventListener('click', () => {
   const leyendaAleatoria = leyendas[indiceAleatorio];
   abrirModalLeyenda(leyendaAleatoria);
 });
+
+const botonTema = document.querySelector('#toggle-tema');
+
+// Al cargar la página, revisar si ya había una preferencia guardada
+if (localStorage.getItem('tema') === 'claro') {
+  document.body.classList.add('tema-claro');
+  botonTema.textContent = '☀️';
+}
+
+botonTema.addEventListener('click', () => {
+  document.body.classList.toggle('tema-claro');
+
+  if (document.body.classList.contains('tema-claro')) {
+    localStorage.setItem('tema', 'claro');
+    botonTema.textContent = '☀️';
+  } else {
+    localStorage.setItem('tema', 'oscuro');
+    botonTema.textContent = '🌙';
+  }
+});
