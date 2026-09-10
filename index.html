@@ -47,14 +47,25 @@
     <p>Archivo de lo Oculto &copy; 2026</p>
   </footer>
 <div id="modal" class="modal oculto">
-  <div class="modal-contenido">
+  <div class="modal-contenido modal-leyenda">
     <button id="cerrar-modal">&times;</button>
-    <img id="modal-imagen" src="" alt="">
-    <h3 id="modal-nombre"></h3>
-    <p><strong>Región:</strong> <span id="modal-region"></span></p>
-    <p><strong>Categoría:</strong> <span id="modal-categoria"></span></p>
-    <p><strong>Nivel de veracidad:</strong> <span id="modal-veracidad"></span>/5</p>
-    <p id="modal-descripcion"></p>
+
+    <div class="modal-imagen-wrap">
+      <img id="modal-imagen" src="" alt="">
+      <span class="modal-badge" id="modal-categoria"></span>
+    </div>
+
+    <div class="modal-texto">
+      <h3 id="modal-nombre"></h3>
+      <p class="modal-region" id="modal-region"></p>
+
+      <div class="modal-veracidad">
+        <span>Nivel de veracidad:</span>
+        <div class="barras-veracidad" id="modal-veracidad"></div>
+      </div>
+
+      <p id="modal-descripcion" class="modal-historia"></p>
+    </div>
   </div>
 </div>
 

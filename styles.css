@@ -351,3 +351,89 @@ nav a,
   color: #ccc;
   line-height: 1.7;
 }
+
+.modal-leyenda {
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal-imagen-wrap {
+  position: relative;
+}
+
+.modal-imagen-wrap img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.modal-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--color-acento);
+  color: white;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-texto {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.modal-texto h3 {
+  font-size: 1.7rem;
+  margin: 0 0 0.2rem;
+}
+
+.modal-region {
+  color: #999;
+  margin: 0 0 1.2rem;
+  font-style: italic;
+}
+
+.modal-veracidad {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.barras-veracidad {
+  display: flex;
+  gap: 4px;
+}
+
+.barra {
+  width: 24px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.barra-llena {
+  background-color: var(--color-acento);
+}
+
+.modal-historia {
+  line-height: 1.8;
+  color: #ddd;
+  font-size: 1.02rem;
+}
+
+#cerrar-modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+}

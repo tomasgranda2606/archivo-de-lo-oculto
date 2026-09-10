@@ -86,7 +86,16 @@ leyendas.forEach((leyenda) => {
   document.querySelector('#modal-nombre').textContent = leyenda.nombre;
   document.querySelector('#modal-region').textContent = leyenda.region;
   document.querySelector('#modal-categoria').textContent = leyenda.categoria;
-  document.querySelector('#modal-veracidad').textContent = leyenda.veracidad;
+  const contenedorVeracidad = document.querySelector('#modal-veracidad');
+contenedorVeracidad.innerHTML = '';
+for (let i = 1; i <= 5; i++) {
+  const barra = document.createElement('span');
+  barra.classList.add('barra');
+  if (i <= leyenda.veracidad) {
+    barra.classList.add('barra-llena');
+  }
+  contenedorVeracidad.appendChild(barra);
+}
   document.querySelector('#modal-descripcion').textContent = leyenda.historia;
 
   document.querySelector('#modal').classList.remove('oculto');
