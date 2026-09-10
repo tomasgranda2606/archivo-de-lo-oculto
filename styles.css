@@ -460,3 +460,22 @@ nav a,
   height: 32px;
   z-index: 10;
 }
+
+.boton-cta {
+  margin-top: 1.5rem;
+  background-color: var(--color-acento);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(139, 0, 0, 0.5);
+}

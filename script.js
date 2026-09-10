@@ -70,39 +70,45 @@ const grid = document.createElement('div');
 grid.classList.add('catalogo-grid');
 catalogo.appendChild(grid);
 
-leyendas.forEach((leyenda) => {
-  const tarjeta = document.createElement('div');
-  tarjeta.classList.add('tarjeta-leyenda');
-  tarjeta.dataset.categoria = leyenda.categoria;
-  tarjeta.innerHTML = `
-  <img src="${leyenda.imagen}" alt="${leyenda.nombre}">
-  <h3>${leyenda.nombre}</h3>
-  <p class="tarjeta-region">${leyenda.region}</p>
-  `;
-
-  tarjeta.addEventListener('click', () => {
+function abrirModalLeyenda(leyenda) {
   document.querySelector('#modal-imagen').src = leyenda.imagen;
   document.querySelector('#modal-imagen').alt = leyenda.nombre;
   document.querySelector('#modal-nombre').textContent = leyenda.nombre;
   document.querySelector('#modal-region').textContent = leyenda.region;
   document.querySelector('#modal-categoria').textContent = leyenda.categoria;
-  const contenedorVeracidad = document.querySelector('#modal-veracidad');
-contenedorVeracidad.innerHTML = '';
-for (let i = 1; i <= 5; i++) {
-  const barra = document.createElement('span');
-  barra.classList.add('barra');
-  if (i <= leyenda.veracidad) {
-    barra.classList.add('barra-llena');
-  }
-  contenedorVeracidad.appendChild(barra);
-}
   document.querySelector('#modal-descripcion').textContent = leyenda.historia;
 
+  const contenedorVeracidad = document.querySelector('#modal-veracidad');
+  contenedorVeracidad.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const barra = document.createElement('span');
+    barra.classList.add('barra');
+    if (i <= leyenda.veracidad) {
+      barra.classList.add('barra-llena');
+    }
+    contenedorVeracidad.appendChild(barra);
+  }
+
   document.querySelector('#modal').classList.remove('oculto');
-});
+}
+
+leyendas.forEach((leyenda) => {
+  const tarjeta = document.createElement('div');
+  tarjeta.classList.add('tarjeta-leyenda');
+  tarjeta.dataset.categoria = leyenda.categoria;
+  tarjeta.innerHTML = `
+    <img src="${leyenda.imagen}" alt="${leyenda.nombre}">
+    <h3>${leyenda.nombre}</h3>
+    <p class="tarjeta-region">${leyenda.region}</p>
+  `;
+
+  tarjeta.addEventListener('click', () => {
+    abrirModalLeyenda(leyenda);
+  });
+
   grid.appendChild(tarjeta);
-  
 });
+
 
 const botonesFiltro = document.querySelectorAll('.filtros button');
 
@@ -212,4 +218,12 @@ modalFormulario.addEventListener('click', (evento) => {
   if (evento.target === modalFormulario) {
     modalFormulario.classList.add('oculto');
   }
+});
+
+const botonAleatorio = document.querySelector('#boton-aleatorio');
+
+botonAleatorio.addEventListener('click', () => {
+  const indiceAleatorio = Math.floor(Math.random() * leyendas.length);
+  const leyendaAleatoria = leyendas[indiceAleatorio];
+  abrirModalLeyenda(leyendaAleatoria);
 });
