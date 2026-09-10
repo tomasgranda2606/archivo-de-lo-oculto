@@ -258,3 +258,9 @@ nav a:hover {
   background-color: var(--color-acento);
   color: white;
 }
+
+.tarjeta-region {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0;
+}
