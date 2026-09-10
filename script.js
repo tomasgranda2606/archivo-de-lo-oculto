@@ -247,3 +247,8 @@ botonTema.addEventListener('click', () => {
     botonTema.textContent = '🌙';
   }
 });
+
+document.querySelector('#stat-leyendas').textContent = leyendas.length;
+
+const paisesUnicos = new Set(leyendas.map((leyenda) => leyenda.region));
+document.querySelector('#stat-paises').textContent = paisesUnicos.size;

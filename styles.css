@@ -494,3 +494,19 @@ body.tema-claro .campo textarea {
   background-color: #ffffff;
   color: #1a1a1a;
 }
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.hero-stats strong {
+  color: var(--color-acento);
+  font-size: 1.4rem;
+  display: block;
+}
