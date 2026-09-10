@@ -5,7 +5,7 @@ const leyendas = [
     categoria: "Aparición",
     veracidad: 4,
     descripcion: "Un espíritu que llora por sus hijos perdidos cerca de ríos y lagos.",
-    imagen: "https://via.placeholder.com/300x180?text=La+Llorona"
+    imagen: "imagenes/lallorona.jpg"
   },
   {
     nombre: "El Mohán",
@@ -13,7 +13,7 @@ const leyendas = [
     categoria: "Criatura",
     veracidad: 3,
     descripcion: "Ser mitad hombre mitad bestia que habita los ríos y seduce a las mujeres.",
-    imagen: "https://via.placeholder.com/300x180?text=El+Mohan"
+    imagen: "imagenes/elmohan.jpg"
   },
   {
     nombre: "El Silbón",
@@ -21,7 +21,7 @@ const leyendas = [
     categoria: "Aparición",
     veracidad: 3,
     descripcion: "Un alma en pena que silba antes de aparecer, cargando un costal de huesos.",
-    imagen: "https://via.placeholder.com/300x180?text=El+Silbon"
+    imagen: "imagenes/el-silbon.jpg"
   },
   {
     nombre: "La Casa Embrujada de Amityville",
@@ -29,7 +29,39 @@ const leyendas = [
     categoria: "Lugar maldito",
     veracidad: 2,
     descripcion: "Una casa donde ocurrieron sucesos paranormales tras un crimen familiar.",
-    imagen: "https://via.placeholder.com/300x180?text=Amityville"
+    imagen: "imagenes/CasaEmbrujada.jpg"
+  },
+  {
+    nombre: "El Chupacabras",
+    region: "Puerto Rico / Latinoamérica",
+    categoria: "Criatura",
+    veracidad: 2,
+    descripcion: "Criatura que ataca ganado y animales pequeños, dejándolos sin sangre.",
+    imagen: "imagenes/chupacabras.jpg"
+  },
+  {
+    nombre: "La Patasola",
+    region: "Colombia",
+    categoria: "Criatura",
+    veracidad: 3,
+    descripcion: "Mujer con una sola pierna que engaña a los hombres en la selva para devorarlos.",
+    imagen: "imagenes/patasola.jpg"
+  },
+  {
+    nombre: "El Triángulo de las Bermudas",
+    region: "Océano Atlántico",
+    categoria: "Lugar maldito",
+    veracidad: 2,
+    descripcion: "Zona donde barcos y aviones han desaparecido sin explicación aparente.",
+    imagen: "imagenes/triangulo.jpg"
+  },
+  {
+    nombre: "La Sayona",
+    region: "Venezuela",
+    categoria: "Aparición",
+    veracidad: 3,
+    descripcion: "Espectro de una mujer que castiga a los hombres infieles apareciéndoseles de noche.",
+    imagen: "imagenes/sayona.jpg"
   }
 ];
 
