@@ -82,8 +82,19 @@ leyendas.forEach((leyenda) => {
     <p><strong>Categoría:</strong> ${leyenda.categoria}</p>
     <p>${leyenda.descripcion}</p>
   `;
+  tarjeta.addEventListener('click', () => {
+    document.querySelector('#modal-imagen').src = leyenda.imagen;
+    document.querySelector('#modal-imagen').alt = leyenda.nombre;
+    document.querySelector('#modal-nombre').textContent = leyenda.nombre;
+    document.querySelector('#modal-region').textContent = leyenda.region;
+    document.querySelector('#modal-categoria').textContent = leyenda.categoria;
+    document.querySelector('#modal-veracidad').textContent = leyenda.veracidad;
+    document.querySelector('#modal-descripcion').textContent = leyenda.descripcion;
 
+    document.querySelector('#modal').classList.remove('oculto');
+  });
   grid.appendChild(tarjeta);
+  
 });
 
 const botonesFiltro = document.querySelectorAll('.filtros button');
@@ -163,4 +174,17 @@ const menuNav = document.querySelector('nav ul');
 
 botonHamburguesa.addEventListener('click', () => {
   menuNav.classList.toggle('activo');
+});
+
+const modal = document.querySelector('#modal');
+const botonCerrarModal = document.querySelector('#cerrar-modal');
+
+botonCerrarModal.addEventListener('click', () => {
+  modal.classList.add('oculto');
+});
+
+modal.addEventListener('click', (evento) => {
+  if (evento.target === modal) {
+    modal.classList.add('oculto');
+  }
 });
