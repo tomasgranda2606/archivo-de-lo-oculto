@@ -186,3 +186,21 @@ modal.addEventListener('click', (evento) => {
     modal.classList.add('oculto');
   }
 });
+
+const modalFormulario = document.querySelector('#modal-formulario');
+const botonAbrirFormulario = document.querySelector('#abrir-modal-formulario');
+const botonCerrarFormulario = document.querySelector('#cerrar-modal-formulario');
+
+botonAbrirFormulario.addEventListener('click', () => {
+  modalFormulario.classList.remove('oculto');
+});
+
+botonCerrarFormulario.addEventListener('click', () => {
+  modalFormulario.classList.add('oculto');
+});
+
+modalFormulario.addEventListener('click', (evento) => {
+  if (evento.target === modalFormulario) {
+    modalFormulario.classList.add('oculto');
+  }
+});
