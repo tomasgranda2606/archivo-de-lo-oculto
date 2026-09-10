@@ -8,6 +8,9 @@
 
 body {
   background-color: var(--color-fondo);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 0, 0, 0.04) 0%, transparent 40%);
   color: var(--color-texto);
   font-family: var(--fuente-texto);
   margin: 0;
@@ -250,6 +253,26 @@ nav a:hover {
 
 .tarjeta-leyenda {
   cursor: pointer;
+  position: relative;
+}
+
+.tarjeta-leyenda::after {
+  content: "Ver más 👁️";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.tarjeta-leyenda:hover::after {
+  opacity: 1;
 }
 
 .franja-superior {
