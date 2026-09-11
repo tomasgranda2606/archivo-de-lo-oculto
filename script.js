@@ -252,3 +252,8 @@ document.querySelector('#stat-leyendas').textContent = leyendas.length;
 
 const paisesUnicos = new Set(leyendas.map((leyenda) => leyenda.region));
 document.querySelector('#stat-paises').textContent = paisesUnicos.size;
+
+document.querySelector('#footer-enviar').addEventListener('click', (evento) => {
+  evento.preventDefault();
+  modalFormulario.classList.remove('oculto');
+});
