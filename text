@@ -1,0 +1,4 @@
+Cuando estaba reorganizando el código para crear la función abrirModalLeyenda, cometí el error de no eliminar el código viejo que quedaba duplicado, y ese bloque no quedó bien cerrado con sus llaves correspondientes. Esto provocó un error en todo el archivo script.js: fue una falla grande, ya que desaparecieron las leyendas del catálogo y nada de lo que llevaba hecho funcionaba. Tuve que revisar los bloques de código uno por uno para identificar y eliminar el bloque duplicado.
+
+Otro problema similar ocurrió al crear el efecto de temblor para la página: no pasaba nada al presionar el botón. Al final, encontré que faltaba un solo carácter (una llave de cierre }) en el CSS. Se me había pasado escribirla, y por eso el efecto no se aplicaba. Este caso me enseñó que en programación un solo carácter puede romper una función entera, así que ahora reviso con más cuidado que cada bloque de código esté bien cerrado.
+
