@@ -384,6 +384,8 @@ nav a,
 .modal-leyenda {
   padding: 0;
   overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .modal-imagen-wrap {
