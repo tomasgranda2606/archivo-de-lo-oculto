@@ -307,3 +307,34 @@ document.querySelector('#cerrar-panel-paises').addEventListener('click', () => {
   panelPaises.classList.remove('visible');
   setTimeout(() => panelPaises.classList.add('oculto'), 300);
 });
+
+const frasesTerror = [
+  "Alguien te observa mientras lees esto...",
+  "No mires detrás tuyo.",
+  "Esta página fue visitada 1,000 veces hoy. Vos sos el número 1,001.",
+  "Las leyendas siempre tienen algo de verdad.",
+  "¿Escuchaste eso?",
+  "No todas las historias tienen final."
+];
+
+const fraseAleatoria = frasesTerror[Math.floor(Math.random() * frasesTerror.length)];
+document.querySelector('#frase-terror').textContent = fraseAleatoria;
+
+const botonEscalofrio = document.querySelector('#modo-escalofrio');
+let intervaloEscalofrio = null;
+
+botonEscalofrio.addEventListener('click', () => {
+  document.body.classList.toggle('escalofrio');
+
+  if (document.body.classList.contains('escalofrio')) {
+    intervaloEscalofrio = setInterval(() => {
+      document.body.classList.add('temblando');
+      setTimeout(() => {
+        document.body.classList.remove('temblando');
+      }, 400);
+    }, 4000);
+  } else {
+    clearInterval(intervaloEscalofrio);
+    document.body.classList.remove('temblando');
+  }
+});

@@ -659,3 +659,66 @@ footer {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.tarjeta-leyenda {
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-leyenda::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image:
+    radial-gradient(ellipse 4px 10px at 20% 0%, var(--color-acento) 40%, transparent 41%),
+    radial-gradient(ellipse 3px 8px at 55% 0%, var(--color-acento) 40%, transparent 41%),
+    radial-gradient(ellipse 5px 14px at 80% 0%, var(--color-acento) 40%, transparent 41%);
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.5s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.tarjeta-leyenda:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+  animation: gotear 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes gotear {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(6px); }
+}
+
+.tarjeta-leyenda:hover::before {
+  transform: scaleX(1);
+}
+
+.frase-terror {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+@keyframes temblor {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+}
+
+body.escalofrio {
+  animation: temblor 0.15s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+body.escalofrio.temblando {
+  animation-play-state: running;
+}
