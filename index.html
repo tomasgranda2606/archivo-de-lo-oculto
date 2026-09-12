@@ -29,8 +29,24 @@
   <p class="hero-subtitulo">Un archivo de leyendas, mitos y apariciones de distintos rincones del mundo. ¿Te atrevés a conocerlas?</p>
   <button id="boton-aleatorio" class="boton-cta">🎲 Sorprendeme con una leyenda</button>
   <div class="hero-stats">
-  <span><strong id="stat-leyendas"></strong> leyendas documentadas</span>
-  <span><strong id="stat-paises"></strong> países representados</span>
+  <button class="stat-boton" id="boton-stat-leyendas">
+    <strong id="stat-leyendas"></strong> leyendas documentadas
+  </button>
+  <button class="stat-boton" id="boton-stat-paises">
+    <strong id="stat-paises"></strong> países representados
+  </button>
+</div>
+
+<div class="panel-lista oculto panel-izquierda" id="panel-leyendas">
+  <button class="cerrar-panel" id="cerrar-panel-leyendas">&times;</button>
+  <h3>Leyendas documentadas</h3>
+  <ul id="lista-leyendas"></ul>
+</div>
+
+<div class="panel-lista oculto panel-derecha" id="panel-paises">
+  <button class="cerrar-panel" id="cerrar-panel-paises">&times;</button>
+  <h3>Países representados</h3>
+  <ul id="lista-paises"></ul>
 </div>
 </section>
     <section id="catalogo">

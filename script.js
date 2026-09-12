@@ -257,3 +257,53 @@ document.querySelector('#footer-enviar').addEventListener('click', (evento) => {
   evento.preventDefault();
   modalFormulario.classList.remove('oculto');
 });
+
+// Lista de leyendas
+const listaLeyendas = document.querySelector('#lista-leyendas');
+leyendas.forEach((leyenda) => {
+  const item = document.createElement('li');
+  item.textContent = leyenda.nombre;
+  listaLeyendas.appendChild(item);
+});
+
+// Lista de países con bandera (usamos flag emoji simple por código de país)
+const banderasPorPais = {
+  "México": "🇲🇽",
+  "Colombia": "🇨🇴",
+  "Venezuela": "🇻🇪",
+  "Estados Unidos": "🇺🇸",
+  "Puerto Rico": "🇵🇷",
+  "Océano Atlántico": "🌊"
+};
+
+const paisesUnicosLista = [...new Set(leyendas.map((leyenda) => leyenda.region.split('/')[0].trim()))];
+
+const listaPaises = document.querySelector('#lista-paises');
+paisesUnicosLista.forEach((pais) => {
+  const item = document.createElement('li');
+  const bandera = banderasPorPais[pais] || "🏳️";
+  item.textContent = `${bandera} ${pais}`;
+  listaPaises.appendChild(item);
+});
+
+// Abrir/cerrar panel de leyendas
+const panelLeyendas = document.querySelector('#panel-leyendas');
+document.querySelector('#boton-stat-leyendas').addEventListener('click', () => {
+  panelLeyendas.classList.remove('oculto');
+  setTimeout(() => panelLeyendas.classList.add('visible'), 10);
+});
+document.querySelector('#cerrar-panel-leyendas').addEventListener('click', () => {
+  panelLeyendas.classList.remove('visible');
+  setTimeout(() => panelLeyendas.classList.add('oculto'), 300);
+});
+
+// Abrir/cerrar panel de países
+const panelPaises = document.querySelector('#panel-paises');
+document.querySelector('#boton-stat-paises').addEventListener('click', () => {
+  panelPaises.classList.remove('oculto');
+  setTimeout(() => panelPaises.classList.add('visible'), 10);
+});
+document.querySelector('#cerrar-panel-paises').addEventListener('click', () => {
+  panelPaises.classList.remove('visible');
+  setTimeout(() => panelPaises.classList.add('oculto'), 300);
+});
